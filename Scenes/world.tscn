@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cawb70a7tv4po"]
+[gd_scene load_steps=11 format=3 uid="uid://cawb70a7tv4po"]
 
 [ext_resource type="PackedScene" uid="uid://b3uubqspadjmv" path="res://Scenes/character_body_3d.tscn" id="1_sksru"]
 [ext_resource type="PackedScene" uid="uid://brf8fo84dnm2s" path="res://Assets/Old Main/Old_Main.blend" id="2_8al0g"]
@@ -26,6 +26,8 @@ volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.403922, 0.247059, 0.215686, 1)
 volumetric_fog_emission = Color(0.186497, 0.183132, 0.332115, 1)
 
+[sub_resource type="HeightMapShape3D" id="HeightMapShape3D_3dbni"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_xu0fd"]
 size = Vector3(1.91824, 1, 0.886841)
 
@@ -49,6 +51,9 @@ transform = Transform3D(-0.440723, 0, 0.897643, 0, 1, 0, -0.897643, 0, -0.440723
 
 [node name="make_a_3_floor_studen_0202232129_texture" parent="." instance=ExtResource("3_05prt")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -48.0762, 12.1036, -25.6761)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="make_a_3_floor_studen_0202232129_texture"]
+shape = SubResource("HeightMapShape3D_3dbni")
 
 [node name="Old_Main" parent="." instance=ExtResource("2_8al0g")]
 transform = Transform3D(-19.9861, 0, -0.74578, 0, 20, 0, 0.74578, 0, -19.9861, -44.575, 11.0318, 52.4341)
