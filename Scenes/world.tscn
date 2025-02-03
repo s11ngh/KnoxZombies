@@ -1,14 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cawb70a7tv4po"]
+[gd_scene load_steps=10 format=3 uid="uid://cawb70a7tv4po"]
 
 [ext_resource type="PackedScene" uid="uid://b3uubqspadjmv" path="res://Scenes/character_body_3d.tscn" id="1_sksru"]
 [ext_resource type="PackedScene" uid="uid://brf8fo84dnm2s" path="res://Assets/Old Main/Old_Main.blend" id="2_8al0g"]
-[ext_resource type="Texture2D" uid="uid://i566v0wqsfa" path="res://addons/simplegrasstextured/images/win_pattern.png" id="3_i6lrn"]
+[ext_resource type="PackedScene" uid="uid://cicx741dlo7ib" path="res://Assets/make_a_3_floor_studen_0202232129_texture.blend" id="3_05prt"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4dnpe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ww6xm"]
 albedo_color = Color(0.431579, 0.30899, 0.175076, 1)
-albedo_texture = ExtResource("3_i6lrn")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cvrm0"]
 
@@ -27,6 +26,9 @@ volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.403922, 0.247059, 0.215686, 1)
 volumetric_fog_emission = Color(0.186497, 0.183132, 0.332115, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xu0fd"]
+size = Vector3(1.91824, 1, 0.886841)
+
 [node name="world" type="Node3D"]
 
 [node name="env" type="Node3D" parent="."]
@@ -42,15 +44,15 @@ material = SubResource("StandardMaterial3D_ww6xm")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
 environment = SubResource("Environment_crp8j")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
-transform = Transform3D(1, 0, 0, 0, 0.0295266, 0.999564, 0, -0.999564, 0.0295266, -0.19418, 161.515, 0)
-light_energy = 1.1
-
-[node name="OmniLight3D" type="OmniLight3D" parent="env"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.15782, 55.5315, 0)
-
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_sksru")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.2356, 0)
+transform = Transform3D(-0.440723, 0, 0.897643, 0, 1, 0, -0.897643, 0, -0.440723, -50.2384, 0.622263, -29.1126)
+
+[node name="make_a_3_floor_studen_0202232129_texture" parent="." instance=ExtResource("3_05prt")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -48.0762, 12.1036, -25.6761)
 
 [node name="Old_Main" parent="." instance=ExtResource("2_8al0g")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -0.838282, 11.4626, -23.6189)
+transform = Transform3D(-19.9861, 0, -0.74578, 0, 20, 0, 0.74578, 0, -19.9861, -44.575, 11.0318, 52.4341)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Old_Main"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142741, -0.0589096, -0.00273395)
+shape = SubResource("BoxShape3D_xu0fd")
