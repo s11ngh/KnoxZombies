@@ -1,5 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cawb70a7tv4po"]
 
+[ext_resource type="PackedScene" uid="uid://du8rr0jsfgiv" path="res://Assets/Ground/ground.glb" id="1_dqteh"]
 [ext_resource type="PackedScene" uid="uid://b3uubqspadjmv" path="res://Scenes/character_body_3d.tscn" id="1_sksru"]
 [ext_resource type="PackedScene" uid="uid://brf8fo84dnm2s" path="res://Assets/Old Main/Old_Main.blend" id="2_8al0g"]
 [ext_resource type="PackedScene" uid="uid://cicx741dlo7ib" path="res://Assets/make_a_3_floor_studen_0202232129_texture.blend" id="3_05prt"]
@@ -7,8 +8,8 @@
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4dnpe"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ww6xm"]
-albedo_color = Color(0.431579, 0.30899, 0.175076, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_1h8ue"]
+size = Vector3(1.95091, 0.324646, 1.99383)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cvrm0"]
 
@@ -39,10 +40,14 @@ size = Vector3(1.91824, 1, 0.886841)
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="env"]
 navigation_mesh = SubResource("NavigationMesh_4dnpe")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="env/NavigationRegion3D"]
-use_collision = true
-size = Vector3(150, 0.002, 150)
-material = SubResource("StandardMaterial3D_ww6xm")
+[node name="ground" parent="env/NavigationRegion3D" instance=ExtResource("1_dqteh")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -1.53495, -2.82187, -10.2069)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="env/NavigationRegion3D/ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="env/NavigationRegion3D/ground/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00529624, -0.110082, 0.0640616)
+shape = SubResource("BoxShape3D_1h8ue")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
 environment = SubResource("Environment_crp8j")
