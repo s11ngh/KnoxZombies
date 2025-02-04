@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw803heskmlsq"]
+
+[ext_resource type="PackedScene" uid="uid://bg7appnqds15c" path="res://Assets/Zombie_Try/Animation_Walking_withSkin.fbx" id="1_7s7l7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xop7k"]
+
+[node name="Zombie" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="Animation_Walking_withSkin" parent="CharacterBody3D" instance=ExtResource("1_7s7l7")]
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="CharacterBody3D/Animation_Walking_withSkin"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0.847033, 0)
+shape = SubResource("SphereShape3D_xop7k")
