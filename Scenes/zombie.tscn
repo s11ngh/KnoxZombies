@@ -10,6 +10,8 @@
 
 [node name="Animation_Walking_withSkin" parent="CharacterBody3D" instance=ExtResource("1_7s7l7")]
 
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="CharacterBody3D/Animation_Walking_withSkin"]
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0.847033, 0)
 shape = SubResource("SphereShape3D_xop7k")

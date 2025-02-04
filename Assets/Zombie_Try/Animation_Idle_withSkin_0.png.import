@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv175gp5l1vls"
+uid="uid://7rj518tk6ot1"
 path.s3tc="res://.godot/imported/Animation_Idle_withSkin_0.png-9ec7dd31460e70b0de325962cdec34f6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "1b439f80d3969cc8b675fcd87efb2be6"
 }
 
 [deps]
