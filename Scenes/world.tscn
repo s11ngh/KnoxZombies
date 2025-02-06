@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b3uubqspadjmv" path="res://Scenes/character_body_3d.tscn" id="1_sksru"]
 [ext_resource type="PackedScene" uid="uid://brf8fo84dnm2s" path="res://Assets/Old Main/Old_Main.blend" id="2_8al0g"]
 [ext_resource type="PackedScene" uid="uid://cicx741dlo7ib" path="res://Assets/make_a_3_floor_studen_0202232129_texture.blend" id="3_05prt"]
-[ext_resource type="PackedScene" path="res://Scenes/zombie.tscn" id="4_yjcrt"]
+[ext_resource type="PackedScene" uid="uid://bw803heskmlsq" path="res://Scenes/zombie.tscn" id="4_yjcrt"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4dnpe"]
 
@@ -41,7 +41,7 @@ size = Vector3(1.91824, 1, 0.886841)
 navigation_mesh = SubResource("NavigationMesh_4dnpe")
 
 [node name="ground" parent="env/NavigationRegion3D" instance=ExtResource("1_dqteh")]
-transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -1.53495, -2.82187, -10.2069)
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -1.53495, -2.82187, -10.6475)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="env/NavigationRegion3D/ground"]
 
@@ -55,10 +55,28 @@ environment = SubResource("Environment_crp8j")
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_sksru")]
 transform = Transform3D(-0.440723, 0, 0.897643, 0, 1, 0, -0.897643, 0, -0.440723, -50.2384, 0.622263, -29.1126)
 
-[node name="make_a_3_floor_studen_0202232129_texture" parent="." instance=ExtResource("3_05prt")]
+[node name="dorm1" parent="." instance=ExtResource("3_05prt")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -48.0762, 12.1036, -25.6761)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="make_a_3_floor_studen_0202232129_texture"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="dorm1"]
+shape = SubResource("HeightMapShape3D_3dbni")
+
+[node name="dorm2" parent="." instance=ExtResource("3_05prt")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -8.46559, 12.1036, -25.6761)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="dorm2"]
+shape = SubResource("HeightMapShape3D_3dbni")
+
+[node name="dorm3" parent="." instance=ExtResource("3_05prt")]
+transform = Transform3D(-8.74228e-07, 0, 20, 0, 20, 0, -20, 0, -8.74228e-07, 46, 12, -25)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="dorm3"]
+shape = SubResource("HeightMapShape3D_3dbni")
+
+[node name="dorm4" parent="." instance=ExtResource("3_05prt")]
+transform = Transform3D(-8.74228e-07, 0, 20, 0, 20, 0, -20, 0, -8.74228e-07, 46, 12, 14.7118)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="dorm4"]
 shape = SubResource("HeightMapShape3D_3dbni")
 
 [node name="Old_Main" parent="." instance=ExtResource("2_8al0g")]
@@ -69,4 +87,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142741, -0.0589096, -0.00
 shape = SubResource("BoxShape3D_xu0fd")
 
 [node name="Zombie" parent="." instance=ExtResource("4_yjcrt")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
