@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cawb70a7tv4po"]
+[gd_scene load_steps=13 format=3 uid="uid://cawb70a7tv4po"]
 
 [ext_resource type="PackedScene" uid="uid://du8rr0jsfgiv" path="res://Assets/Ground/ground.glb" id="1_dqteh"]
 [ext_resource type="PackedScene" uid="uid://b3uubqspadjmv" path="res://Scenes/character_body_3d.tscn" id="1_sksru"]
 [ext_resource type="PackedScene" uid="uid://brf8fo84dnm2s" path="res://Assets/Old Main/Old_Main.blend" id="2_8al0g"]
 [ext_resource type="PackedScene" uid="uid://cicx741dlo7ib" path="res://Assets/make_a_3_floor_studen_0202232129_texture.blend" id="3_05prt"]
-[ext_resource type="PackedScene" uid="uid://bw803heskmlsq" path="res://Scenes/zombie.tscn" id="4_yjcrt"]
+[ext_resource type="PackedScene" path="res://Scenes/zombie.tscn" id="4_yjcrt"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4dnpe"]
 
@@ -69,3 +69,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142741, -0.0589096, -0.00
 shape = SubResource("BoxShape3D_xu0fd")
 
 [node name="Zombie" parent="." instance=ExtResource("4_yjcrt")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
