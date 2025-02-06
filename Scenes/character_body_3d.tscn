@@ -22,4 +22,4 @@ shape = SubResource("CapsuleShape3D_8uoml")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.124126, 0.843741, -0.641549)
 
 [node name="A_colorful_toy_water__0204173219_refine" parent="." instance=ExtResource("2_k775v")]
-transform = Transform3D(-0.118971, 0, -0.275401, 0, 0.3, 0, 0.275401, 0, -0.118971, -0.314713, 0.873711, -1.50364)
+transform = Transform3D(-0.118971, 0, -0.275401, 0, 0.3, 0, 0.275401, 0, -0.118971, -0.122765, 0.42045, -1.50364)

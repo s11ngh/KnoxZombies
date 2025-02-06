@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cawb70a7tv4po"]
+[gd_scene load_steps=21 format=3 uid="uid://cawb70a7tv4po"]
 
 [ext_resource type="PackedScene" uid="uid://du8rr0jsfgiv" path="res://Assets/Ground/ground.glb" id="1_dqteh"]
 [ext_resource type="PackedScene" uid="uid://b3uubqspadjmv" path="res://Scenes/character_body_3d.tscn" id="1_sksru"]
@@ -9,6 +9,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b8ip6unjlvlsh" path="res://Assets/demollished structures/barri2/make_a_low_poly_demol_0206110922_texture.obj" id="7_yn6b1"]
 [ext_resource type="ArrayMesh" uid="uid://dimy67orguts1" path="res://Assets/wall barricade/generate_a_barricade__0206122419_texture.obj" id="8_t3kqa"]
 [ext_resource type="PackedScene" uid="uid://b4m8i0pt5o8uv" path="res://Assets/bed/bed.glb" id="9_diavl"]
+[ext_resource type="AudioStream" uid="uid://cn48dlw1fvfle" path="res://Assets/music/videoplayback (mp3cut.net).mp3" id="10_afbwp"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4dnpe"]
 
@@ -29,8 +30,9 @@ glow_enabled = true
 glow_intensity = 0.63
 glow_strength = 0.18
 volumetric_fog_enabled = true
+volumetric_fog_density = 0.071
 volumetric_fog_albedo = Color(0.403922, 0.247059, 0.215686, 1)
-volumetric_fog_emission = Color(0.186497, 0.183132, 0.332115, 1)
+volumetric_fog_emission = Color(0.206634, 0.441914, 0.418593, 1)
 
 [sub_resource type="HeightMapShape3D" id="HeightMapShape3D_3dbni"]
 
@@ -504,3 +506,10 @@ mesh = ExtResource("8_t3kqa")
 [node name="GenerateABarricade0206122419Texture4" type="MeshInstance3D" parent="bed2/bed3"]
 transform = Transform3D(-0.0350773, 0.0866009, -1.07092, 0.197866, 1.48467, 0.0581183, 1.48648, -0.195582, -0.0330072, -15.3574, -0.117222, -5.94107)
 mesh = ExtResource("8_t3kqa")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_afbwp")
+volume_db = 9.905
+max_db = 5.429
+autoplay = true
+panning_strength = 2.14
