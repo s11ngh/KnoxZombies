@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cawb70a7tv4po"]
+[gd_scene load_steps=21 format=3 uid="uid://cawb70a7tv4po"]
 
 [ext_resource type="PackedScene" uid="uid://du8rr0jsfgiv" path="res://Assets/Ground/ground.glb" id="1_dqteh"]
 [ext_resource type="PackedScene" uid="uid://b3uubqspadjmv" path="res://Scenes/character_body_3d.tscn" id="1_sksru"]
@@ -9,6 +9,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b8ip6unjlvlsh" path="res://Assets/demollished structures/barri2/make_a_low_poly_demol_0206110922_texture.obj" id="7_yn6b1"]
 [ext_resource type="ArrayMesh" uid="uid://dimy67orguts1" path="res://Assets/wall barricade/generate_a_barricade__0206122419_texture.obj" id="8_t3kqa"]
 [ext_resource type="PackedScene" uid="uid://b4m8i0pt5o8uv" path="res://Assets/bed/bed.glb" id="9_diavl"]
+[ext_resource type="PackedScene" uid="uid://c6anorjsexy6" path="res://Assets/roadandsidewalk/road2.glb" id="10_wlnoo"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4dnpe"]
 
@@ -504,3 +505,6 @@ mesh = ExtResource("8_t3kqa")
 [node name="GenerateABarricade0206122419Texture4" type="MeshInstance3D" parent="bed2/bed3"]
 transform = Transform3D(-0.0350773, 0.0866009, -1.07092, 0.197866, 1.48467, 0.0581183, 1.48648, -0.195582, -0.0330072, -15.3574, -0.117222, -5.94107)
 mesh = ExtResource("8_t3kqa")
+
+[node name="road2" parent="." instance=ExtResource("10_wlnoo")]
+transform = Transform3D(0.00517707, -0.000945153, -0.779979, 0.0242475, 3.73779, 9.11922e-12, 0.704564, -0.128629, 0.00573122, -61.6326, -0.134634, -12.3812)
