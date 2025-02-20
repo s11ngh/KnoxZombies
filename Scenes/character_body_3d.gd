@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 
-const SPEED = 20.0
-const SPRINT_SPEED = 30.0
+const SPEED = 30.0
+const SPRINT_SPEED = 40.0
 const JUMP_VELOCITY = 6.5
 @export var mouse_sensitivity = 0.003
 @onready var head = $Head
