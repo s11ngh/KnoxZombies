@@ -9,7 +9,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b8ip6unjlvlsh" path="res://Assets/demollished structures/barri2/make_a_low_poly_demol_0206110922_texture.obj" id="7_yn6b1"]
 [ext_resource type="ArrayMesh" uid="uid://dimy67orguts1" path="res://Assets/wall barricade/generate_a_barricade__0206122419_texture.obj" id="8_t3kqa"]
 [ext_resource type="PackedScene" uid="uid://b4m8i0pt5o8uv" path="res://Assets/bed/bed.glb" id="9_diavl"]
-[ext_resource type="PackedScene" uid="uid://c6anorjsexy6" path="res://Assets/roadandsidewalk/road2.glb" id="10_wlnoo"]
+[ext_resource type="AudioStream" uid="uid://cn48dlw1fvfle" path="res://Assets/music/videoplayback (mp3cut.net).mp3" id="10_afbwp"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4dnpe"]
 
@@ -30,8 +30,9 @@ glow_enabled = true
 glow_intensity = 0.63
 glow_strength = 0.18
 volumetric_fog_enabled = true
+volumetric_fog_density = 0.071
 volumetric_fog_albedo = Color(0.403922, 0.247059, 0.215686, 1)
-volumetric_fog_emission = Color(0.186497, 0.183132, 0.332115, 1)
+volumetric_fog_emission = Color(0.206634, 0.441914, 0.418593, 1)
 
 [sub_resource type="HeightMapShape3D" id="HeightMapShape3D_3dbni"]
 
@@ -506,5 +507,9 @@ mesh = ExtResource("8_t3kqa")
 transform = Transform3D(-0.0350773, 0.0866009, -1.07092, 0.197866, 1.48467, 0.0581183, 1.48648, -0.195582, -0.0330072, -15.3574, -0.117222, -5.94107)
 mesh = ExtResource("8_t3kqa")
 
-[node name="road2" parent="." instance=ExtResource("10_wlnoo")]
-transform = Transform3D(0.00517707, -0.000945153, -0.779979, 0.0242475, 3.73779, 9.11922e-12, 0.704564, -0.128629, 0.00573122, -61.6326, -0.134634, -12.3812)
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_afbwp")
+volume_db = 9.905
+max_db = 5.429
+autoplay = true
+panning_strength = 2.14
