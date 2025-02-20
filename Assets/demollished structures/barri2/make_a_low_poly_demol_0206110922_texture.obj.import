@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8ip6unjlvlsh"
+path="res://.godot/imported/make_a_low_poly_demol_0206110922_texture.obj-cb418aa4892cb4788e4018636d23970c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/make_a_low_poly_demol_0206110922_texture.obj-cb418aa4892cb4788e4018636d23970c.mesh"]
+
+source_file="res://Assets/demollished structures/barri2/make_a_low_poly_demol_0206110922_texture.obj"
+dest_files=["res://.godot/imported/make_a_low_poly_demol_0206110922_texture.obj-cb418aa4892cb4788e4018636d23970c.mesh", "res://.godot/imported/make_a_low_poly_demol_0206110922_texture.obj-cb418aa4892cb4788e4018636d23970c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
