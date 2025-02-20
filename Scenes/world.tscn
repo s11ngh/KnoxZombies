@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cawb70a7tv4po"]
+[gd_scene load_steps=12 format=3 uid="uid://cawb70a7tv4po"]
 
 [ext_resource type="PackedScene" uid="uid://b3uubqspadjmv" path="res://Scenes/character_body_3d.tscn" id="1_sksru"]
 [ext_resource type="PackedScene" uid="uid://brf8fo84dnm2s" path="res://Assets/Old Main/Old_Main.blend" id="2_8al0g"]
@@ -21,7 +21,7 @@ glow_enabled = true
 glow_intensity = 0.63
 glow_strength = 0.18
 fog_enabled = true
-fog_density = 0.0
+fog_density = 0.001
 volumetric_fog_density = 0.071
 volumetric_fog_albedo = Color(0.403922, 0.247059, 0.215686, 1)
 volumetric_fog_emission = Color(0.206634, 0.441914, 0.418593, 1)
@@ -31,6 +31,9 @@ size = Vector3(1.91824, 1, 0.886841)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0qx43"]
 size = Vector3(1.01965, 0.0875244, 1.01245)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u5iuq"]
+size = Vector3(2.83742, 1.36047, 0.235541)
 
 [node name="world" type="Node3D"]
 
@@ -70,6 +73,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.3453, 18.1134, -27.9427)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="main city/StaticBody3D"]
 transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, -0.701904, -21.5944, 0.549316)
 shape = SubResource("BoxShape3D_0qx43")
+
+[node name="outer wall" type="StaticBody3D" parent="main city"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 269.036, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="main city/outer wall"]
+transform = Transform3D(5.23591, 0, 499.973, 0, 500, 0, -499.973, 0, 5.23591, -274.302, 23.6626, -25.4417)
+shape = SubResource("BoxShape3D_u5iuq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="main city/outer wall"]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 4.44412, 23.6626, 305.284)
+shape = SubResource("BoxShape3D_u5iuq")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="main city/outer wall"]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 4.44412, 23.6626, -310.95)
+shape = SubResource("BoxShape3D_u5iuq")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="main city/outer wall"]
+transform = Transform3D(2.14655, -45.4814, 497.922, 0.196069, 497.927, 45.481, -499.995, 8.31514e-09, 2.15548, 270.094, -236.466, 36.8338)
+shape = SubResource("BoxShape3D_u5iuq")
 
 [node name="endless city" parent="." instance=ExtResource("11_cbi0b")]
 transform = Transform3D(-0.999874, 0, -0.0158643, 0, 1, 0, 0.0158643, 0, -0.999874, -33.4779, 18.1134, 467.154)
