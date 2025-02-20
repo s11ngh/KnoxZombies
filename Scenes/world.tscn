@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cawb70a7tv4po"]
+[gd_scene load_steps=23 format=3 uid="uid://cawb70a7tv4po"]
 
 [ext_resource type="PackedScene" uid="uid://du8rr0jsfgiv" path="res://Assets/Ground/ground.glb" id="1_dqteh"]
 [ext_resource type="PackedScene" uid="uid://b3uubqspadjmv" path="res://Scenes/character_body_3d.tscn" id="1_sksru"]
@@ -10,6 +10,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dimy67orguts1" path="res://Assets/wall barricade/generate_a_barricade__0206122419_texture.obj" id="8_t3kqa"]
 [ext_resource type="PackedScene" uid="uid://b4m8i0pt5o8uv" path="res://Assets/bed/bed.glb" id="9_diavl"]
 [ext_resource type="AudioStream" uid="uid://cn48dlw1fvfle" path="res://Assets/music/videoplayback (mp3cut.net).mp3" id="10_afbwp"]
+[ext_resource type="PackedScene" uid="uid://bk0ey7rsic7b2" path="res://Assets/Ground/city.glb" id="11_cbi0b"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4dnpe"]
 
@@ -47,6 +48,9 @@ size = Vector3(1.16016, 1.73621, 1.3042)
 [sub_resource type="BoxShape3D" id="BoxShape3D_hiypx"]
 size = Vector3(0.11377, 1.93909, 3.38599)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0qx43"]
+size = Vector3(1.01965, 0.0875244, 1.01245)
+
 [node name="world" type="Node3D"]
 
 [node name="env" type="Node3D" parent="."]
@@ -67,7 +71,7 @@ shape = SubResource("BoxShape3D_1h8ue")
 environment = SubResource("Environment_crp8j")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_sksru")]
-transform = Transform3D(-0.440723, 0, 0.897643, 0, 1, 0, -0.897643, 0, -0.440723, -50.2384, 0.622263, -29.1126)
+transform = Transform3D(-0.118981, 0, -2.99764, 0, 3, 0, 2.99764, 0, -0.118981, -1049.03, 1.8077, -421.749)
 
 [node name="dorm1" parent="." instance=ExtResource("3_05prt")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -48.0762, 12.1036, -25.6761)
@@ -94,7 +98,7 @@ transform = Transform3D(-8.74228e-07, 0, 20, 0, 20, 0, -20, 0, -8.74228e-07, 46,
 shape = SubResource("HeightMapShape3D_3dbni")
 
 [node name="Old_Main" parent="." instance=ExtResource("2_8al0g")]
-transform = Transform3D(-19.9861, 0, -0.74578, 0, 20, 0, 0.74578, 0, -19.9861, -44.575, 11.0318, 52.4341)
+transform = Transform3D(0.0844688, 0, -39.9999, 0, 40, 0, 39.9999, 0, 0.0844688, -720.978, 19.3455, -215.86)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Old_Main"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142741, -0.0589096, -0.00273395)
@@ -507,8 +511,20 @@ transform = Transform3D(-0.0350773, 0.0866009, -1.07092, 0.197866, 1.48467, 0.05
 mesh = ExtResource("8_t3kqa")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -714.069, 43.338, -217.115)
 stream = ExtResource("10_afbwp")
-volume_db = 9.905
-max_db = 5.429
+volume_db = 22.096
+unit_size = 23.8
+max_db = 4.547
 autoplay = true
+max_distance = 624.15
 panning_strength = 2.14
+
+[node name="city" parent="." instance=ExtResource("11_cbi0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -809.589, -3.64616, -196.351)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="city"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="city/StaticBody3D"]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, -0.701904, -21.5944, 0.549316)
+shape = SubResource("BoxShape3D_0qx43")
