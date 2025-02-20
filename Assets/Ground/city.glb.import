@@ -14,7 +14,11 @@ dest_files=["res://.godot/imported/city.glb-64db576d04c61767ff3f4b565175a5d1.scn
 [params]
 
 nodes/root_type="StaticBody3D"
+<<<<<<< Updated upstream
 nodes/root_name="lmao"
+=======
+nodes/root_name=""
+>>>>>>> Stashed changes
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
