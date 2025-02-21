@@ -10,6 +10,11 @@ const HIT_STAGGER = 8.0
 @export var mouse_sensitivity = 0.003
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var gun_anim = $Head/Camera3D/Pistola/AnimationPlayer
+@onready var gun_barrel = $Head/Camera3D/Pistola/RayCast3D
+
+var bullet = load("res://Scenes/bullet.tscn")
+var instance 
 
 signal player_hit
 
@@ -49,6 +54,17 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, walk_speed)
 		velocity.z = move_toward(velocity.z, 0, walk_speed)
 
+	#Shooting
+	if Input.is_action_pressed("shoot"):
+		if !gun_anim.is_playing():
+			gun_anim.play("Shoot")
+			instance = bullet.instantiate()
+			instance.position = gun_barrel.global_position
+			instance.transform.basis = gun_barrel.global_transform.basis
+			get_parent().add_child(instance)
+			
+			
+			
 	move_and_slide()
 	
 func hit(dir):

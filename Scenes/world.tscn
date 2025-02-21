@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://cawb70a7tv4po"]
 
-[ext_resource type="Script" path="res://Scenes/world.gd" id="1_cnxnh"]
-[ext_resource type="PackedScene" uid="uid://b3uubqspadjmv" path="res://Scenes/character_body_3d.tscn" id="1_sksru"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_cnxnh"]
+[ext_resource type="PackedScene" uid="uid://b3uubqspadjmv" path="res://Scenes/Player.tscn" id="1_sksru"]
 [ext_resource type="PackedScene" uid="uid://brf8fo84dnm2s" path="res://Assets/Old Main/Old_Main.blend" id="2_8al0g"]
 [ext_resource type="PackedScene" uid="uid://ch6cubvdmtvpk" path="res://Scenes/Zombie1.tscn" id="2_ybcd4"]
 [ext_resource type="AudioStream" uid="uid://cn48dlw1fvfle" path="res://Assets/music/videoplayback (mp3cut.net).mp3" id="10_afbwp"]

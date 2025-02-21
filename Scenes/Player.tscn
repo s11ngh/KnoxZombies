@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3uubqspadjmv"]
 
-[ext_resource type="Script" path="res://Scenes/player.gd" id="1_ofjfk"]
-[ext_resource type="PackedScene" uid="uid://c0vcbmufqk4go" path="res://Assets/textures/A_colorful_toy_water__0204173219_refine.fbx" id="2_k775v"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ofjfk"]
+[ext_resource type="PackedScene" uid="uid://83x44ucrd2x6" path="res://Scenes/pistola.tscn" id="2_7lcxl"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cxsd4"]
 
@@ -19,7 +19,7 @@ shape = SubResource("CapsuleShape3D_8uoml")
 [node name="Head" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.124126, 0.843741, -0.641549)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.124126, 0.843741, -0.653155)
 
-[node name="A_colorful_toy_water__0204173219_refine" parent="." instance=ExtResource("2_k775v")]
-transform = Transform3D(-0.118971, 0, -0.275401, 0, 0.3, 0, 0.275401, 0, -0.118971, -0.122765, 0.42045, -1.50364)
+[node name="Pistola" parent="Head/Camera3D" instance=ExtResource("2_7lcxl")]
+transform = Transform3D(-0.308613, 0.00860438, -0.393299, -0.164373, 0.451333, 0.138854, 0.357406, 0.215, -0.275746, 0.309577, -0.377939, -1.03613)
