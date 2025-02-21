@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3uubqspadjmv"]
 
-[ext_resource type="Script" path="res://Scenes/character_body_3d.gd" id="1_ofjfk"]
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_ofjfk"]
 [ext_resource type="PackedScene" uid="uid://c0vcbmufqk4go" path="res://Assets/textures/A_colorful_toy_water__0204173219_refine.fbx" id="2_k775v"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cxsd4"]

@@ -4,10 +4,14 @@ extends CharacterBody3D
 const SPEED = 30.0
 const SPRINT_SPEED = 50.0
 const JUMP_VELOCITY = 6.5
+const HIT_STAGGER = 8.0
+
+
 @export var mouse_sensitivity = 0.003
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
+signal player_hit
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -47,4 +51,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	
+func hit(dir):
+	emit_signal("player_hit")
+	velocity += dir * HIT_STAGGER
