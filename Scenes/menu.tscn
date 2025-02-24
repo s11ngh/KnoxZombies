@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://ncbgx3mogq2k"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_ak27g"]
+[ext_resource type="Texture2D" uid="uid://bgvw5k8l0upu3" path="res://Assets/menu/Game Menu.png" id="1_f6u8i"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ak27g")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+
+[node name="GameMenu" type="Sprite2D" parent="."]
+position = Vector2(966, 545)
+texture = ExtResource("1_f6u8i")
+
+[node name="Button" type="Button" parent="GameMenu"]
+offset_left = -286.0
+offset_top = 15.0
+offset_right = 261.0
+offset_bottom = 144.0
+flat = true
+
+[connection signal="pressed" from="GameMenu/Button" to="." method="_on_button_pressed"]

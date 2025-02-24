@@ -1,0 +1,123 @@
+[gd_scene load_steps=13 format=3 uid="uid://cawb70a7tv4po"]
+
+[ext_resource type="PackedScene" uid="uid://b3uubqspadjmv" path="res://Scenes/character_body_3d.tscn" id="1_sksru"]
+[ext_resource type="PackedScene" uid="uid://brf8fo84dnm2s" path="res://Assets/Old Main/Old_Main.blend" id="2_8al0g"]
+[ext_resource type="PackedScene" uid="uid://ch6cubvdmtvpk" path="res://Scenes/Zombie1.tscn" id="2_ybcd4"]
+[ext_resource type="AudioStream" uid="uid://cn48dlw1fvfle" path="res://Assets/music/videoplayback (mp3cut.net).mp3" id="10_afbwp"]
+[ext_resource type="PackedScene" uid="uid://bk0ey7rsic7b2" path="res://Assets/Ground/city.glb" id="11_cbi0b"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_4dnpe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0qx43"]
+size = Vector3(1.01965, 0.0875244, 1.01245)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u5iuq"]
+size = Vector3(2.83742, 1.36047, 0.235541)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nbmka"]
+
+[sub_resource type="Sky" id="Sky_rys8m"]
+sky_material = SubResource("ProceduralSkyMaterial_nbmka")
+
+[sub_resource type="Environment" id="Environment_crp8j"]
+background_mode = 2
+sky = SubResource("Sky_rys8m")
+tonemap_mode = 2
+sdfgi_enabled = true
+glow_enabled = true
+glow_intensity = 0.63
+glow_strength = 0.18
+fog_enabled = true
+fog_light_energy = 0.5
+fog_density = 0.003
+volumetric_fog_density = 0.071
+volumetric_fog_albedo = Color(0.403922, 0.247059, 0.215686, 1)
+volumetric_fog_emission = Color(0.206634, 0.441914, 0.418593, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xu0fd"]
+size = Vector3(1.91824, 1, 0.886841)
+
+[node name="world" type="Node3D"]
+
+[node name="env" type="Node3D" parent="."]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="env"]
+navigation_mesh = SubResource("NavigationMesh_4dnpe")
+
+[node name="main city" parent="env/NavigationRegion3D" instance=ExtResource("11_cbi0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.3453, 18.1134, -27.9427)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="env/NavigationRegion3D/main city"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="env/NavigationRegion3D/main city/StaticBody3D"]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, -0.701904, -21.5944, 0.549316)
+shape = SubResource("BoxShape3D_0qx43")
+
+[node name="outer wall" type="StaticBody3D" parent="env/NavigationRegion3D/main city"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 269.036, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="env/NavigationRegion3D/main city/outer wall"]
+transform = Transform3D(5.23591, 0, 499.973, 0, 500, 0, -499.973, 0, 5.23591, -274.302, 23.6626, -25.4417)
+shape = SubResource("BoxShape3D_u5iuq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="env/NavigationRegion3D/main city/outer wall"]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 4.44412, 23.6626, 305.284)
+shape = SubResource("BoxShape3D_u5iuq")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="env/NavigationRegion3D/main city/outer wall"]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 4.44412, 23.6626, -310.95)
+shape = SubResource("BoxShape3D_u5iuq")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="env/NavigationRegion3D/main city/outer wall"]
+transform = Transform3D(2.14655, -45.4814, 497.922, 0.196069, 497.927, 45.481, -499.995, 8.31514e-09, 2.15548, 270.094, -236.466, 36.8338)
+shape = SubResource("BoxShape3D_u5iuq")
+
+[node name="Zombie" parent="env/NavigationRegion3D" instance=ExtResource("2_ybcd4")]
+player_path = NodePath("../../../CharacterBody3D")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+environment = SubResource("Environment_crp8j")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_sksru")]
+transform = Transform3D(-0.118981, 0, -2.99764, 0, 3, 0, 2.99764, 0, -0.118981, -272.919, 23.5673, -253.341)
+
+[node name="Old_Main" parent="." instance=ExtResource("2_8al0g")]
+transform = Transform3D(0.0844688, 0, -39.9999, 0, 40, 0, 39.9999, 0, 0.0844688, 55.1331, 41.1051, -47.4517)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Old_Main"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142741, -0.0589096, -0.00273395)
+shape = SubResource("BoxShape3D_xu0fd")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.0422, 65.0975, -48.7067)
+stream = ExtResource("10_afbwp")
+volume_db = 22.096
+unit_size = 23.8
+max_db = 4.547
+autoplay = true
+max_distance = 624.15
+panning_strength = 2.14
+
+[node name="endless city" parent="." instance=ExtResource("11_cbi0b")]
+transform = Transform3D(-0.999874, 0, -0.0158643, 0, 1, 0, 0.0158643, 0, -0.999874, -33.4779, 18.1134, 467.154)
+
+[node name="city3" parent="endless city" instance=ExtResource("11_cbi0b")]
+transform = Transform3D(-0.00260059, 0, -0.999997, 0, 1, 0, 0.999997, 0, -0.00260059, -485.753, 0, -7.70712)
+
+[node name="city4" parent="endless city/city3" instance=ExtResource("11_cbi0b")]
+transform = Transform3D(-0.99966, 0, 0.0260896, 0, 1, 0, -0.0260896, 0, -0.99966, 483.599, 0, 3.20392)
+
+[node name="city5" parent="endless city/city3/city4" instance=ExtResource("11_cbi0b")]
+transform = Transform3D(0.0286892, 0, -0.999588, 0, 1, 0, 0.999588, 0, 0.0286892, 496.141, 0, 974.589)
+
+[node name="city7" parent="endless city/city3/city4/city5" instance=ExtResource("11_cbi0b")]
+transform = Transform3D(0.999913, 0, -0.0131943, 0, 1, 0, 0.0131943, 0, 0.999913, -540.258, 0, 987.86)
+
+[node name="city8" parent="endless city/city3/city4/city5/city7" instance=ExtResource("11_cbi0b")]
+transform = Transform3D(-0.00260059, 0, -0.999997, 0, 1, 0, 0.999997, 0, -0.00260059, -485.753, 0, -7.70709)
+
+[node name="city9" parent="endless city/city3/city4/city5/city7/city8" instance=ExtResource("11_cbi0b")]
+transform = Transform3D(-0.00260059, 0, 0.999997, 0, 1, 0, -0.999997, 0, -0.00260059, 3.1651, 0, -983.998)
+
+[node name="city6" parent="endless city/city3/city4/city5/city7/city8/city9" instance=ExtResource("11_cbi0b")]
+transform = Transform3D(0.00279254, 0, 0.999996, 0, 1, 0, -0.999996, 0, 0.00279254, 44.0529, 0, -497.272)

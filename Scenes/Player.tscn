@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3uubqspadjmv"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ofjfk"]
+[ext_resource type="PackedScene" uid="uid://83x44ucrd2x6" path="res://Scenes/pistola.tscn" id="2_7lcxl"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cxsd4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8uoml"]
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_ofjfk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_cxsd4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_8uoml")
+
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.124126, 0.843741, -0.653155)
+
+[node name="Pistola" parent="Head/Camera3D" instance=ExtResource("2_7lcxl")]
+transform = Transform3D(-0.308613, 0.00860438, -0.393299, -0.164373, 0.451333, 0.138854, 0.357406, 0.215, -0.275746, 0.309577, -0.377939, -1.03613)
