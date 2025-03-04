@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8ahshilogugp"]
+[gd_scene load_steps=7 format=3 uid="uid://c8ahshilogugp"]
 
 [ext_resource type="Script" path="res://Scenes/bullet.gd" id="1_rg1ox"]
 
@@ -11,6 +11,20 @@ emission_enabled = true
 emission = Color(0.395375, 0.786879, 0.456752, 1)
 emission_energy_multiplier = 5.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_466ws"]
+albedo_color = Color(1, 1, 0.0313726, 1)
+emission_enabled = true
+emission = Color(0.651116, 0.683709, 0.255971, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_shpth"]
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_sihl2"]
+size = Vector3(0.04, 0.04, 0.04)
+
 [node name="Bullet" type="Node3D"]
 script = ExtResource("1_rg1ox")
 
@@ -20,3 +34,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_00806")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -0.6)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.553035)
+material_override = SubResource("StandardMaterial3D_466ws")
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_shpth")
+draw_pass_1 = SubResource("BoxMesh_sihl2")
