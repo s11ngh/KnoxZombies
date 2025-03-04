@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://83x44ucrd2x6"]
+
+[ext_resource type="PackedScene" uid="uid://c0vcbmufqk4go" path="res://Assets/textures/A_colorful_toy_water__0204173219_refine.fbx" id="1_rhmpm"]
+
+[sub_resource type="Animation" id="Animation_tmice"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh_0:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iocb0"]
+resource_name = "shoot"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh_0:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.05), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_epqw4"]
+_data = {
+"RESET": SubResource("Animation_tmice"),
+"shoot": SubResource("Animation_iocb0")
+}
+
+[node name="Pistola" instance=ExtResource("1_rhmpm")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+
+[node name="Mesh_0" parent="." index="0"]
+cast_shadow = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_epqw4")
+}
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="2"]
+transform = Transform3D(0.704077, 0.710124, 3.10405e-08, 0, -4.37114e-08, 1, 0.710124, -0.704077, -3.07762e-08, -0.570611, 0.271511, 0.5788)
