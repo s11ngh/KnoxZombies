@@ -63,7 +63,7 @@ func _physics_process(delta: float) -> void:
 			instance.transform.basis = gun_barrel.global_transform.basis
 			get_parent().add_child(instance)
 			
-			
+				
 			
 	move_and_slide()
 	
