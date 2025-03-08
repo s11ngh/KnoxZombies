@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=4 uid="uid://ch6cubvdmtvpk"]
 
-[ext_resource type="Script" path="res://Scripts/zombie_1.gd" id="1_orl1l"]
+[ext_resource type="Script" uid="uid://cijmrqpr2xsre" path="res://Scripts/zombie_1.gd" id="1_orl1l"]
 [ext_resource type="Texture2D" uid="uid://b5btb4dnekbki" path="res://models/zombie/Zombie_mremireh_body__diffuse.png" id="2_ksb5u"]
 [ext_resource type="Texture2D" uid="uid://bicbryfijwjxp" path="res://models/zombie/Zombie_mremireh_body_normal.png" id="3_rysmq"]
 [ext_resource type="Texture2D" uid="uid://psn2x8xdb2jy" path="res://models/zombie/Zombie_mremireh_shoe_diffuse.png" id="4_otrsa"]
@@ -2298,10 +2298,10 @@ tracks/95/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d6ubt"]
 _data = {
-"RESET": SubResource("Animation_qrc5x"),
-"attack": SubResource("Animation_iyann"),
-"run": SubResource("Animation_hx6ts"),
-"standup": SubResource("Animation_0ir3h")
+&"RESET": SubResource("Animation_qrc5x"),
+&"attack": SubResource("Animation_iyann"),
+&"run": SubResource("Animation_hx6ts"),
+&"standup": SubResource("Animation_0ir3h")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kr4mm"]

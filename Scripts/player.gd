@@ -13,6 +13,8 @@ const HIT_STAGGER = 8.0
 @onready var gun_anim = $Head/Camera3D/Pistola/AnimationPlayer
 @onready var gun_barrel = $Head/Camera3D/Pistola/RayCast3D
 
+
+# Bullets
 var bullet = load("res://Scenes/bullet.tscn")
 var instance 
 

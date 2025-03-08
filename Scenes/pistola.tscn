@@ -36,8 +36,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_epqw4"]
 _data = {
-"RESET": SubResource("Animation_tmice"),
-"shoot": SubResource("Animation_iocb0")
+&"RESET": SubResource("Animation_tmice"),
+&"shoot": SubResource("Animation_iocb0")
 }
 
 [node name="Pistola" instance=ExtResource("1_rhmpm")]

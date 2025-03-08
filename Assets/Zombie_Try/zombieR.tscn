@@ -1,9 +1,9 @@
 [gd_scene load_steps=21 format=4 uid="uid://c5fskkrrqfjwa"]
 
-[ext_resource type="Texture2D" uid="uid://b5btb4dnekbki" path="res://Models/Zombie/Zombie_mremireh_body__diffuse.png" id="1_mfht4"]
-[ext_resource type="Texture2D" uid="uid://bicbryfijwjxp" path="res://Models/Zombie/Zombie_mremireh_body_normal.png" id="2_otom0"]
-[ext_resource type="Texture2D" uid="uid://psn2x8xdb2jy" path="res://Models/Zombie/Zombie_mremireh_shoe_diffuse.png" id="3_adqag"]
-[ext_resource type="Texture2D" uid="uid://dtljfk286htvy" path="res://Models/Zombie/Zombie_mremireh_shoe_normal.png" id="4_cqwcw"]
+[ext_resource type="Texture2D" uid="uid://b5btb4dnekbki" path="res://models/zombie/Zombie_mremireh_body__diffuse.png" id="1_mfht4"]
+[ext_resource type="Texture2D" uid="uid://bicbryfijwjxp" path="res://models/zombie/Zombie_mremireh_body_normal.png" id="2_otom0"]
+[ext_resource type="Texture2D" uid="uid://psn2x8xdb2jy" path="res://models/zombie/Zombie_mremireh_shoe_diffuse.png" id="3_adqag"]
+[ext_resource type="Texture2D" uid="uid://dtljfk286htvy" path="res://models/zombie/Zombie_mremireh_shoe_normal.png" id="4_cqwcw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3f0cb"]
 resource_name = "emireh_body_material"
@@ -2256,9 +2256,9 @@ tracks/94/keys = PackedFloat32Array(0, 1, -2.15562e-06, 23.512, -4.34365e-06)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l1tjf"]
 _data = {
-"Attack": SubResource("Animation_kh1ux"),
-"Run": SubResource("Animation_5opqq"),
-"StandUp": SubResource("Animation_uxuvw")
+&"Attack": SubResource("Animation_kh1ux"),
+&"Run": SubResource("Animation_5opqq"),
+&"StandUp": SubResource("Animation_uxuvw")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3mtal"]
